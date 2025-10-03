@@ -344,8 +344,14 @@ header {
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
-    transform: translateY(30px);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .service-card {
+        opacity: 1;
+        transform: translateY(30px);
+    }
 }
 
 .service-card.animate {
@@ -409,7 +415,7 @@ header {
     flex: 1;
     position: relative;
     transform: translateX(-50px);
-    opacity: 0;
+    opacity: 1;
 }
 
 .about-image.animate {
@@ -444,7 +450,7 @@ header {
 .about-content {
     flex: 1;
     transform: translateX(50px);
-    opacity: 0;
+    opacity: 1;
 }
 
 .about-content.animate {
@@ -496,7 +502,7 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     transform: translateY(30px);
-    opacity: 0;
+    opacity: 1;
 }
 
 .doctor-card.animate {
@@ -592,17 +598,19 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
     opacity: 0;
+    display: none;
     transition: var(--transition);
 }
 
 .testimonial-card.active {
     opacity: 1;
+    display: block;
 }
 
 .quote-icon {
     font-size: 3rem;
     color: var(--secondary);
-    opacity: 0.2;
+    opacity: 0.5;
     margin-bottom: 20px;
 }
 
